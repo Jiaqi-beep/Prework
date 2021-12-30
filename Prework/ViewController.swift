@@ -31,11 +31,12 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         let per = total / partySize.value
+        let formattedPer = String(format: "%.2f", per)
         
         tipAmountLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-        amountPerPerson.text = String(format: "$%.2f", per)
-        partySizeLabel.text = String(format: "%.0f", partySize.value)
+        amountPerPerson.text = String("$\(formattedPer) Per Person")
+        partySizeLabel.text = String(Int(partySize.value))
     }
     
     
